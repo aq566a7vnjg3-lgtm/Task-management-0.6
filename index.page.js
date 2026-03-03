@@ -63,6 +63,8 @@ import {
     dcDocsDueDate: $('dcDocsDueDate'),
     dcDocsSent: $('dcDocsSent'),
     dcDocsSentDate: $('dcDocsSentDate'),
+    htcStatus: $('htcStatus'),
+    tradeinDocsStatus: $('tradeinDocsStatus'),
 
     contractType: $('contractType'),
     paymentStartMonth: $('paymentStartMonth'),
@@ -314,6 +316,8 @@ els.topCards.appendChild(card);
     els.dcDocsDueDate.value = activeCase.derived?.dcDocsDueDate||'';
     els.dcDocsSent.value = activeCase.dcDocsSent||'';
     els.dcDocsSentDate.value = activeCase.dcDocsSentDate||'';
+    els.htcStatus.value = activeCase.htcStatus||'';
+    els.tradeinDocsStatus.value = activeCase.tradeinDocsStatus||'';
 
     // loan
     els.contractType.value = activeCase.contractType||'';
@@ -411,6 +415,8 @@ els.topCards.appendChild(card);
       dcReserveAt: '',
       dcDocsSent: '',
       dcDocsSentDate: '',
+      htcStatus: '',
+      tradeinDocsStatus: '',
 
       contractType: '現金',
       paymentStartMonth: '',
@@ -519,6 +525,8 @@ els.topCards.appendChild(card);
   bindField(els.dcReserveAt,'dcReserveAt');
   bindField(els.dcDocsSent,'dcDocsSent');
   bindField(els.dcDocsSentDate,'dcDocsSentDate');
+  bindField(els.htcStatus,'htcStatus');
+  bindField(els.tradeinDocsStatus,'tradeinDocsStatus');
 
   bindField(els.contractType,'contractType');
   bindField(els.paymentStartMonth,'paymentStartMonth');
