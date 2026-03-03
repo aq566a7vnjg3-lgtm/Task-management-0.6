@@ -664,7 +664,30 @@ export function topDeadlines(caseObj){
 
   // sort by date
   list.sort((a,b)=> (a.iso||'').localeCompare(b.iso||''));
-  return list.slice(0,5);
+
+  // IMPORTANT: 希望番号申請は見落とし防止のため、存在する場合はTOP表示に必ず含める
+  const hopeISO = (isOpen('hope_no_apply')
+    ? (caseObj.derived?.hopeNoApplyDueDate || tasks.find(t=>t.key==='hope_no_apply')?.dueDate)
+    : null);
+  const hasHope = !!hopeISO;
+
+  let top = list.slice(0,5);
+
+  if(hasHope){
+    const inTop = top.some(x=>x.label==='希望番号申請');
+    if(!inTop){
+      // 5件埋まっていれば末尾を置き換え、未満なら追加
+      if(top.length>=5){
+        top[top.length-1] = { label: '希望番号申請', iso: hopeISO };
+      }else{
+        top.push({ label: '希望番号申請', iso: hopeISO });
+      }
+      // 再ソートして見た目を時系列に揃える
+      top.sort((a,b)=> (a.iso||'').localeCompare(b.iso||''));
+    }
+  }
+
+  return top;
 }
 
 export function validateForGenerate(caseObj){
