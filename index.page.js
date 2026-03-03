@@ -105,7 +105,7 @@ import {
     return dueList[0];
   }
 
-  function bindCheckbox(el, key){
+function bindCheckbox(el, key){
     el.onchange = async ()=>{
       if(!activeCase) return;
       activeCase[key] = !!el.checked;
@@ -115,7 +115,7 @@ import {
     };
   }
 
-  function applySort(list){
+function applySort(list){
     const s = els.sort.value;
     const arr = [...list];
     if(s==='updated'){
@@ -134,14 +134,18 @@ import {
       });
     }
     return arr;
-  }  function applyFilter(list){
+  }
+
+function applyFilter(list){
     const f = els.filter.value;
     if(f==='all') return list;
     if(f==='uncompleted') return list.filter(c=>(c.tasks||[]).some(t=>!t.done));
     if(f==='overdue') return list.filter(c=> (c.tasks||[]).some(t=>!t.done && classifyDue(t.dueDate)==='overdue'));
     if(f==='soon') return list.filter(c=> (c.tasks||[]).some(t=>!t.done && classifyDue(t.dueDate)==='soon'));
     return list;
-  }  function applySearch(list){
+  }
+
+function applySearch(list){
     const q = (els.search.value||'').trim();
     if(!q) return list;
     const qq = q.toLowerCase();
@@ -149,7 +153,9 @@ import {
       const hay = [c.orderNo,c.frameNo,c.hopeNo,c.userName].filter(Boolean).join(' ').toLowerCase();
       return hay.includes(qq);
     });
-  }  function renderList(){
+  }
+
+function renderList(){
     const base = applySearch(applyFilter(applySort(cases)));
     els.caseList.innerHTML='';
 
@@ -182,7 +188,9 @@ import {
       div.onclick=()=>selectCase(c.id);
       els.caseList.appendChild(div);
     });
-  }  function setRegMethodRules(){
+  }
+
+function setRegMethodRules(){
     if(els.carType.value==='軽' && els.regMethod.value==='OSS'){
       els.regMethodHint.textContent='軽自動車はOSS不可のため「書類代行」に変更してください。';
       els.regMethodHint.style.color='var(--danger)';
@@ -190,7 +198,9 @@ import {
       els.regMethodHint.textContent='';
       els.regMethodHint.style.color='';
     }
-  }  function renderKpis(){
+  }
+
+function renderKpis(){
     if(!activeCase){ els.kpis.innerHTML=''; return; }
     const overdue = (activeCase.tasks||[]).filter(t=>!t.done && classifyDue(t.dueDate)==='overdue').length;
     const soon = (activeCase.tasks||[]).filter(t=>!t.done && classifyDue(t.dueDate)==='soon').length;
@@ -201,7 +211,9 @@ import {
       <span class="badge warn">3日以内: <strong>${soon}</strong></span>
       <span class="badge">最終更新: <strong>${new Date(activeCase.updatedAt||0).toLocaleString('ja-JP')}</strong></span>
     `;
-  }  function renderTopCards(){
+  }
+
+function renderTopCards(){
     if(!activeCase){ els.topCards.innerHTML=''; return; }
 
     // 希望番号申請期限（登録日=希望番号完成日から逆算）
@@ -283,7 +295,9 @@ function renderTasks(){
       };
       els.taskBody.appendChild(tr);
     });
-  }  function fillForm(){
+  }
+
+function fillForm(){
     if(!activeCase){
       els.form.style.display='none';
       els.emptyState.style.display='block';
@@ -366,14 +380,18 @@ function renderTasks(){
     renderKpis();
     renderTopCards();
     updateGenerateButtons();
-  }  function bindField(el, key, transform=(v)=>v){
+  }
+
+function bindField(el, key, transform=(v)=>v){
     el.onchange = async ()=>{
       if(!activeCase) return;
       activeCase[key] = transform(el.value);
       setRegMethodRules();
       await persist();
     };
-  }  function updateGenerateButtons(){
+  }
+
+function updateGenerateButtons(){
     if(!activeCase){
       els.btnGenerate.disabled = true;
       els.btnRecalc.disabled = true;
