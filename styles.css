@@ -276,3 +276,33 @@ input, select, textarea {
   margin-right: 8px;
   cursor: pointer;
 }
+
+
+/* ================================
+   セクション視認性向上デザイン
+================================ */
+.section {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 12px 0;
+  background: #ffffff;
+}
+
+.section > summary {
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* セクション色分け（表示順ベース） */
+.section:nth-of-type(1) { border-left: 6px solid #2563eb; background: #f5f9ff; }
+.section:nth-of-type(2) { border-left: 6px solid #16a34a; background: #f5fff7; }
+.section:nth-of-type(3) { border-left: 6px solid #7c3aed; background: #fbf7ff; }
+.section:nth-of-type(4) { border-left: 6px solid #f59e0b; background: #fffbf0; }
+.section:nth-of-type(5) { border-left: 6px solid #ef4444; background: #fff5f5; }
+.section:nth-of-type(6) { border-left: 6px solid #0ea5e9; background: #f0f9ff; }
+.section:nth-of-type(7) { border-left: 6px solid #14b8a6; background: #f0fdfa; }
+.section:nth-of-type(8) { border-left: 6px solid #eab308; background: #fefce8; }
+.section:nth-of-type(9) { border-left: 6px solid #f97316; background: #fff7ed; }
