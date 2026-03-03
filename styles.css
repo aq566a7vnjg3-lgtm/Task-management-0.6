@@ -266,3 +266,13 @@ input, select, textarea {
   max-width: 100%;
   box-sizing: border-box;
 }
+
+
+/* ================================
+   タスク欄 チェックボックス拡大
+================================ */
+.task-list input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 8px;
+  cursor: pointer;
+}

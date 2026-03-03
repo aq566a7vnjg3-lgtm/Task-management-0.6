@@ -520,6 +520,26 @@ import {
 
   bindField(els.memo,'memo');
 
+
+  // --- Section always open (disable collapsing by clicking headings) ---
+  (function lockSectionsAlwaysOpen(){
+    const details = Array.from(document.querySelectorAll('details.section'));
+    details.forEach(d=>{
+      d.open = true; // keep open
+      const s = d.querySelector('summary');
+      if(s){
+        s.addEventListener('click', (e)=>{
+          // Prevent default toggle behavior of <details>/<summary>
+          e.preventDefault();
+        });
+      }
+      d.addEventListener('toggle', ()=>{
+        if(!d.open) d.open = true;
+      });
+    });
+  })();
+
+
   // initial
   renderList();
   fillForm();
