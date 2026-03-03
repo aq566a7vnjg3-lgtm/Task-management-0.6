@@ -2,7 +2,7 @@ import {
     ensureSettings, loadBuiltinHolidays, saveSettings,
     loadSettings, exportAll, importAll,
     storageSupported
-  } from './app.js';
+  } from './app.js?v=20260303_1';
 
   const $ = (id)=>document.getElementById(id);
   const els = {
