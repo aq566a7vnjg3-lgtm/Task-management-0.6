@@ -7,7 +7,7 @@ import {
     classifyDue, topDeadlines,
     storageSupported,
     parseISODate
-  } from './app.js?v=20260305_1';
+  } from './app.js';
 
   const $ = (id)=>document.getElementById(id);
   const els = {
