@@ -7,7 +7,7 @@ const DB_VER = 1;
 const STORE_CASES = 'cases';
 const STORE_SETTINGS = 'settings';
 
-export const TASK_DEFS = [
+const TASK_DEFS = [
   { key: 'hope_no_apply', title: '希望番号の申請', optional: false, dueType: 'none' },
   { key: 'reg_docs_submit', title: '登録書類の提出', optional: false, dueType: 'hq_submit' },
   { key: 'dc_reserve', title: '納車センター予約', optional: false, dueType: 'dc_reserve_suggest' },
@@ -20,7 +20,7 @@ export const TASK_DEFS = [
   { key: 'payment_check_thanks', title: '入金確認　お礼電話', optional: true, dueType: 'payment' },
 ];
 
-export const HOPE_NO_TYPES = [
+const HOPE_NO_TYPES = [
   '希望番号なし',
   '希望番号',
   '希望図柄（モノトーン）',
