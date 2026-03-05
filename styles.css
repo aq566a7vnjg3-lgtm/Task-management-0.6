@@ -335,3 +335,21 @@ input, select, textarea {
   background: rgba(124,58,237,.08);
   color: #5b21b6;
 }
+
+
+/* ================================
+   登録・書類：2列レイアウト固定（PC/ iPad）
+================================ */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+.field{ min-width: 0; }
+.field.span6{ grid-column: span 6; }
+.field.span4{ grid-column: span 4; }
+.field.span12{ grid-column: span 12; }
+
+@media (max-width: 820px){
+  .field.span6, .field.span4{ grid-column: span 12; }
+}
