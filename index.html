@@ -155,54 +155,15 @@
           </div>
         </div>
       </details>
-
-      <details class="section" open>
+<details class="section" open>
         <summary>登録・書類</summary>
         <div class="content">
           <div class="grid">
-<div class="field span6">
+<div class="field span4">
               <label>書類回収日</label>
               <input id="docsCollectDate" type="date" />
             </div>
-<div class="field  req span6">
-              <label>本社便へ書類を渡した日（登録書類提出日）</label>
-              <input id="hqSubmitDate" type="date" />
-              <div class="small">本社便が非稼働なら「次の稼働日」に繰り越して到着扱いになります。</div>
-            
 <div class="field span6">
-              <label>登録課 到着日（自動）</label>
-              <div class="row">
-                <input id="hqArrivalDate" type="date" disabled />
-                <span class="badge auto">自動</span>
-              </div>
-            <div class="field span6">
-              <label>登録予定日（自動）</label>
-              <div class="row">
-                <input id="regPlannedDate" type="date" disabled />
-                <span class="badge auto">自動</span>
-              </div>
-            
-<div class="field span6">
-              <label>登録日（手入力）</label>
-              <input id="regDate" type="date" />
-              <div class="inline-check"><label><input id="regDone" type="checkbox" /> 登録完了</label></div>
-            
-
-</div>
-            </div>
-            </div>
-            </div>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      
-      <details class="section" open>
-        <summary>車庫証明</summary>
-        <div class="content">
-          <div class="grid">
-            <div class="field span4">
               <label>車庫証明 必要/不要</label>
               <select id="garageRequired">
                 <option value="">選択</option>
@@ -210,18 +171,96 @@
                 <option value="不要">不要</option>
               </select>
               <div class="small">不要を選択すると、営業日入力と期限算出は行いません。</div>
-            </div>
-
-            <div class="field span4" id="garageDaysField">
+<div class="field span6" id="garageDaysField">
               <label>発行に必要な営業日</label>
               <input id="garageLeadBusinessDays" type="number" min="1" placeholder="例：5" />
               <div class="small">未入力なら「車庫証明提出」の期限は自動算出しません。</div>
+<div class="field span4">
+              <label>書類回収日</label>
+              <input id="docsCollectDate" type="date" />
+            </div>
+<div class="field span4 req">
+              <label>本社便へ書類を渡した日（登録書類提出日）</label>
+              <input id="hqSubmitDate" type="date" />
+              <div class="small">本社便が非稼働なら「次の稼働日」に繰り越して到着扱いになります。</div>
+            <div class="field span4">
+              <label>書類回収日</label>
+              <input id="docsCollectDate" type="date" />
+            </div>
+<div class="field span4 req">
+              <label>本社便へ書類を渡した日（登録書類提出日）</label>
+              <input id="hqSubmitDate" type="date" />
+              <div class="small">本社便が非稼働なら「次の稼働日」に繰り越して到着扱いになります。</div>
+            </div>
+            <div class="field span4">
+              <label>登録課 到着日（自動）</label>
+              <div class="row">
+                <input id="hqArrivalDate" type="date" disabled />
+                <span class="badge auto">自動</span>
+              </div>
+            </div>
+            <div class="field span4">
+              <label>登録予定日（自動）</label>
+              <div class="row">
+                <input id="regPlannedDate" type="date" disabled />
+                <span class="badge auto">自動</span>
+              </div>
+            <div class="field span4">
+              <label>書類回収日</label>
+              <input id="docsCollectDate" type="date" />
+            </div>
+<div class="field span4 req">
+              <label>本社便へ書類を渡した日（登録書類提出日）</label>
+              <input id="hqSubmitDate" type="date" />
+              <div class="small">本社便が非稼働なら「次の稼働日」に繰り越して到着扱いになります。</div>
+            </div>
+            <div class="field span4">
+              <label>登録課 到着日（自動）</label>
+              <div class="row">
+                <input id="hqArrivalDate" type="date" disabled />
+                <span class="badge auto">自動</span>
+              </div>
+            </div>
+            <div class="field span4">
+              <label>登録予定日（自動）</label>
+              <div class="row">
+                <input id="regPlannedDate" type="date" disabled />
+                <span class="badge auto">自動</span>
+              </div>
+            </div>
+            <div class="field span4">
+              <label>登録日（手入力）</label>
+              <input id="regDate" type="date" />
+              <div class="inline-check"><label><input id="regDone" type="checkbox" /> 登録完了</label></div>
+            
+            <div class="field span4 req">
+              <label>本社便へ書類を渡した日（登録書類提出日）</label>
+              <input id="hqSubmitDate" type="date" />
+              <div class="small">本社便が非稼働なら「次の稼働日」に繰り越して到着扱いになります。</div>
+            </div>
+            <div class="field span4">
+              <label>登録課 到着日（自動）</label>
+              <div class="row">
+                <input id="hqArrivalDate" type="date" disabled />
+                <span class="badge auto">自動</span>
+              </div>
+            </div>
+            <div class="field span4">
+              <label>登録予定日（自動）</label>
+              <div class="row">
+                <input id="regPlannedDate" type="date" disabled />
+                <span class="badge auto">自動</span>
+              </div>
+            </div>
+            <div class="field span4">
+              <label>登録日（手入力）</label>
+              <input id="regDate" type="date" />
+              <div class="inline-check"><label><input id="regDone" type="checkbox" /> 登録完了</label></div>
             </div>
           </div>
         </div>
       </details>
-
-      <details class="section" open>
+<details class="section" open>
         <summary>納車・納車センター</summary>
         <div class="content">
           <div class="grid">
@@ -280,8 +319,7 @@
           </div>
         </div>
       </details>
-
-      <details class="section" open>
+<details class="section" open>
         <summary>支払・ローン</summary>
         <div class="content">
           <div class="grid">
@@ -308,8 +346,7 @@
           </div>
         </div>
       </details>
-
-      <details class="section" open>
+<details class="section" open>
         <summary>下取り・残債</summary>
         <div class="content">
           <div class="grid">
@@ -332,8 +369,7 @@
           </div>
         </div>
       </details>
-
-      <details class="section" open>
+<details class="section" open>
         <summary>保険</summary>
         <div class="content">
           <div class="grid">
@@ -353,8 +389,7 @@
           </div>
         </div>
       </details>
-
-      <details class="section" open>
+<details class="section" open>
         <summary>タスク（10個）</summary>
         <div class="content">
           <table class="table">
@@ -372,16 +407,13 @@
           <div class="hint">期限は「自動」表示ですが、クリックして日付を変更すると「手動」になります（再計算でも保持）。</div>
         </div>
       </details>
-
-      <details class="section" open>
+<details class="section" open>
         <summary>備考</summary>
         <div class="content">
           <label>メモ</label>
           <textarea id="memo" placeholder="自由記入"></textarea>
         </div>
-      </details>
-
-      <div class="footer-actions">
+      </details><div class="footer-actions">
         <span class="small">※iPad/PCどちらでも使用可。端末間で共有する場合は「設定/バックアップ」からJSONをエクスポート→インポートしてください。</span>
       </div>
     </div>
